@@ -14,14 +14,16 @@ void TextEditor::startTextEditor(LinkedList linkedList) {
     linkedList.list();
     char command;
     int start, end;
-    int cursorPosition = start;
-    while(input != "E") {
-
+    int cursorPosition;
+    int count = 0;
+    while (input != "E") {
         start = '\0';
-//        if(start != '\0'){
-//            std::cout << start << "> ";
-//        }
 
+        if (count == 0) {
+
+            cursorPosition = linkedList.printLastNum();
+            std::cout << cursorPosition << "> ";
+        }
         getline(std::cin, input);
 
         std::stringstream ss;
@@ -35,73 +37,82 @@ void TextEditor::startTextEditor(LinkedList linkedList) {
 
 
         ss >> command >> start >> end;
-        if(!ss){
+        if (!ss) {
             // command with start and end not entered
             ss2 >> command >> start;
-            if(!ss2){
+            if (!ss2) {
                 // command with start not entered
                 ss3 >> command;
-                if(!ss3){
+                if (!ss3) {
                     // no commands entered
-                }
-                else{
+                } else {
+
                     // just command is entered
-                    if(command == 'L'){
+                    if (command == 'L') {
+                        if (count == 0) {
+                            cursorPosition = linkedList.printLastNum();
+                        }
                         linkedList.list();
                     }
-                    if(command == 'I'){
-                        if(cursorPosition == start){
+                    if (command == 'I') {
+                        if (count == 0) {
                             std::string data;
                             getline(std::cin, data);
-                            linkedList.insert(data,linkedList.printLastNum());
-                        }
-                        else{
+                            linkedList.insert(data, linkedList.printLastNum());
+                            cursorPosition = linkedList.printLastNum();
+                        } else {
                             std::string data;
+                            getline(std::cin, data);
                             std::cout << cursorPosition << "> ";
-                            getline(std::cin, data);
                             linkedList.insert(data, cursorPosition);
                         }
-                    if(command == 'D'){
-                        if(cursorPosition == start){
+                    }
+                    if (command == 'D') {
+                        if (count == 0) {
                             linkedList.remove(linkedList.printLastNum());
-                        }
-                        else{
-                            std::cout << cursorPosition << "> ";
+                            cursorPosition = linkedList.printLastNum();
+                        } else {
+
                             linkedList.remove(cursorPosition);
                         }
                     }
-                    }
+
                 }
-            }
-            else{
+            } else {
                 // command and index is entered
                 cursorPosition = start;
-                if(command == 'L') {
+                if (command == 'L') {
 
                     linkedList.list(start);
                 }
-                if(command == 'I'){
+                if (command == 'I') {
                     std::string data;
+                    std::cout << cursorPosition << "> ";
                     getline(std::cin, data);
                     linkedList.insert(data, start);
                 }
-                if(command == 'D'){
+                if (command == 'D') {
                     linkedList.remove(start);
                 }
             }
-        }
-        else{
+        } else {
             // command with start and end entered
             cursorPosition = start;
-            if(command == 'L') {
+            if (command == 'L') {
+                cursorPosition = start;
                 linkedList.list(start, end);
             }
-            if(command == 'D'){
+            if (command == 'D') {
                 cursorPosition = start;
-                linkedList.remove(start,end);
+                linkedList.remove(start, end);
             }
         }
-
+        count++;
+        if (count == 0) {
+            cursorPosition = linkedList.printLastNum();
+        } else {
+            std::cout << "\n" << cursorPosition << "> ";
+        }
     } //  end while loop
 
 } // end texteditor function

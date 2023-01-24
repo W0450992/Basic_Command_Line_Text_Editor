@@ -245,7 +245,7 @@ int LinkedList::printLastNum() {
         node = node->m_next;
         counter++;
         if (node == nullptr) {
-            std::cout << counter << "> ";
+//            std::cout << counter << "> ";
             break;
         }
     }
