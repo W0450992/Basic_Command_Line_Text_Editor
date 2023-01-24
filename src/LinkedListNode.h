@@ -4,11 +4,11 @@
 
 #ifndef ASSIGNMENT1_LINKEDLISTNODE_H
 #define ASSIGNMENT1_LINKEDLISTNODE_H
-
+#include <iostream>
 
 class LinkedListNode {
 public:
-    int m_data = {-1};
+    std::string m_data = "0";
     LinkedListNode *m_next{nullptr};
 
 };

@@ -13,12 +13,16 @@ private:
     LinkedListNode *m_start{nullptr};
     int m_size{0};
 public:
-    LinkedList() {
-
-    }
-    void add(int num);
-    void insert(int data, int index);
+    LinkedList();
+    void add(std::string data);
+    void insert(std::string data, int index);
     void remove(int index);
+    void remove(int start, int end);
+    void list();
+    void list(int lineNum);
+    void list(int start, int end);
+    //int findCursorPosition(int position);
+    int printLastNum();
     friend std::ostream &operator<<(std::ostream &output, LinkedList &list);
 };
 
