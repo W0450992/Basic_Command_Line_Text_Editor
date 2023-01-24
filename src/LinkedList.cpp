@@ -104,14 +104,8 @@ void LinkedList::remove(int index) {
 }
 
 void LinkedList::remove(int start, int end) {
-    int starting = start;
-    while (starting <= end) {
-        if (starting == start) {
-            remove(starting);
-        } else {
-            remove(starting - 1);
-        }
-        starting++;
+    for (int i = start;i <= end; i++) {
+        remove(start);
     }
 }
 

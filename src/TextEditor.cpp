@@ -97,6 +97,7 @@ void TextEditor::startTextEditor(LinkedList linkedList) {
                 linkedList.list(start, end);
             }
             if(command == 'D'){
+                cursorPosition = start;
                 linkedList.remove(start,end);
             }
         }
