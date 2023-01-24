@@ -21,7 +21,6 @@ public:
     void list();
     void list(int lineNum);
     void list(int start, int end);
-    //int findCursorPosition(int position);
     int printLastNum();
     friend std::ostream &operator<<(std::ostream &output, LinkedList &list);
 };

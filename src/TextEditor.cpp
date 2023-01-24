@@ -33,7 +33,6 @@ LinkedList TextEditor::startTextEditor(LinkedList linkedList) {
         ss2 << input;
         ss3 << input;
 
-
         ss >> command >> start >> end;
         if (!ss) {
             // command with start and end not entered
@@ -74,7 +73,6 @@ LinkedList TextEditor::startTextEditor(LinkedList linkedList) {
                             linkedList.remove(cursorPosition);
                         }
                     }
-
                 }
             } else {
                 // command and index is entered
