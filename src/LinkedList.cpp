@@ -225,7 +225,7 @@ void LinkedList::list(int start, int end) {
 std::ostream &operator<<(std::ostream &output, LinkedList &list) {
     auto node = list.m_start;
     std::ofstream myFileOut;
-    myFileOut.open("myFile.txt", std::ios::out);
+    myFileOut.open("test.txt", std::ios::out);
     while (node != nullptr) {
         output << node->m_data << " " << "\n";
         myFileOut << node->m_data << " " << "\n";
