@@ -20,8 +20,7 @@ int main(int argc, char *argv[]) {
         TextEditor textEditor;
 
         linkedList =  ReadFile::readfile(argv[1],linkedList);
-        // function call to text editor goes here
-        textEditor.startTextEditor(linkedList);
+        linkedList = textEditor.startTextEditor(linkedList);
         cout << linkedList << endl;
     }
     else{

@@ -9,7 +9,7 @@
 #include "LinkedList.h"
 
 //int cursorPosition;
-void TextEditor::startTextEditor(LinkedList linkedList) {
+LinkedList TextEditor::startTextEditor(LinkedList linkedList) {
     std::string input;
     linkedList.list();
     char command;
@@ -32,8 +32,6 @@ void TextEditor::startTextEditor(LinkedList linkedList) {
         ss << input;
         ss2 << input;
         ss3 << input;
-
-
 
 
         ss >> command >> start >> end;
@@ -115,5 +113,6 @@ void TextEditor::startTextEditor(LinkedList linkedList) {
         }
     } //  end while loop
 
+    return linkedList;
 } // end texteditor function
 

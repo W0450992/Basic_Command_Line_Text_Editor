@@ -10,7 +10,7 @@
 class TextEditor {
 
 public:
-    void startTextEditor(LinkedList linkedList);
+    LinkedList startTextEditor(LinkedList linkedList);
 };
 
 

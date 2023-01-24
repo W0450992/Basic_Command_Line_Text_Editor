@@ -34,8 +34,8 @@ LinkedList ReadFile::readfile(std::string argument, LinkedList linkedList) {
             cout << "File closed" << endl;
             return linkedList;
         } else {
-            cout << "Input file failed to open. Making new file." << endl;
-            cout << linkedList << endl;
+            cout << "Input file failed to open. Will make new File on Exit." << endl;
+
             return linkedList;
         }
 //
