@@ -12,14 +12,14 @@ LinkedList::LinkedList() {
     int m_size{0};
 }
 
-LinkedList::~LinkedList() {
-    auto node = m_start;
-    while (node != nullptr) {
-        auto temp = node;
-        node = node->m_next;
-        delete temp;
-    }
-}
+//LinkedList::~LinkedList() {
+//    auto node = m_start;
+//    while (node != nullptr) {
+//        auto temp = node;
+//        node = node->m_next;
+//        delete temp;
+//    }
+//}
 
 void LinkedList::add(std::string data) {
     // create a new node

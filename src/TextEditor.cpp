@@ -52,7 +52,7 @@ LinkedList TextEditor::startTextEditor(LinkedList linkedList) {
                         linkedList.list();
                     }
                     if (command == 'I') {
-                        if (count == 0) {
+                        if (count == 0 || !start) {
                             std::string data;
                             getline(std::cin, data);
                             linkedList.insert(data, linkedList.printLastNum());
