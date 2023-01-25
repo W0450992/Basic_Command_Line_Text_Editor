@@ -52,10 +52,10 @@ LinkedList TextEditor::startTextEditor(LinkedList linkedList) {
                         linkedList.list();
                     }
                     if (command == 'I') {
-                        if (count == 0 || !start) {
+                        if (count == 0 || start == '\0') {
                             std::string data;
                             getline(std::cin, data);
-                            linkedList.insert(data, linkedList.printLastNum());
+                            linkedList.add(data);
                             cursorPosition = linkedList.printLastNum();
                         } else {
                             std::string data;
@@ -104,11 +104,10 @@ LinkedList TextEditor::startTextEditor(LinkedList linkedList) {
             }
         }
         count++;
-        if (count == 0) {
+        if (count == 0 || start == '\0') {
             cursorPosition = linkedList.printLastNum();
-        } else {
-            std::cout << "\n" << cursorPosition << "> ";
         }
+        std::cout << "\n" << cursorPosition << "> ";
     } //  end while loop
 
     return linkedList;
