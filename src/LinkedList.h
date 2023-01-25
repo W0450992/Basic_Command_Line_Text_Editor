@@ -14,6 +14,8 @@ private:
     int m_size{0};
 public:
     LinkedList();
+    virtual ~LinkedList();
+
     void add(std::string data);
     void insert(std::string data, int index);
     void remove(int index);
